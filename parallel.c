@@ -6,6 +6,6 @@ int main()
 {
 	printf("Hello world\n");
 	
-	
+	int i =  0;
 	
 }
