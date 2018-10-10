@@ -1,0 +1,9 @@
+//Just pthreads
+gcc -Wall view.c -o view -lpthread
+//pthreads and semaphores
+gcc -Wall view.c -o view -lpthread -lrt
+
+tar -jcvf archive.tar.bz2 stuff
+ 
+ 
+ gcc -Wall conc_custom.c -o conc_custom -lpthread -lrt

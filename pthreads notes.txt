@@ -1,0 +1,30 @@
+//Create an array of pthread IDs
+pthread_t threads[NUM_THREADS];
+
+//Launch a thread, in this case it is the first ID in the threads array
+pthread_create(&thread[0], NULL, threadFunction, (void *) msg);
+//Example thread function
+void* threadFunction(void * arg)
+{
+	int msg = *(int *) arg;
+	//Do work
+	pthread_exit(NULL);
+}
+
+//Join my thread to the main thread (your current program)
+//This forces the main program to wait for my background thread to finish
+pthread_join(thread[0], NULL);
+
+
+//Create a mutex
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+//Lock the mutex
+pthread_mutex_lock(&mutex);
+//Unlock the mutex
+pthread_mutex_unlock(&mutex);
+//Note: the line of code between lock and unlock can only be accessed by 1 thread
+
+Source:
+https://www.youtube.com/watch?v=GXXE42bkqQk
+
